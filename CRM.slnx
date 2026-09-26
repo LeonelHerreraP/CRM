@@ -2,6 +2,7 @@
   <Project Path="CRM.Api/CRM.Api.csproj" />
   <Project Path="CRM.DataAccess/CRM.DataAccess.csproj" />
   <Project Path="CRM.Model/CRM.Model.csproj" />
+  <Project Path="CRM.Service/CRM.Service.csproj" />
   <Project Path="CRM.Utility/CRM.Utility.csproj" />
   <Project Path="CRM.WebBlazor/CRM.WebBlazor.csproj" />
 </Solution>
