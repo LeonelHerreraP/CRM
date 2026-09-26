@@ -1,8 +1,8 @@
 
 using Microsoft.OpenApi;
-using CRM.Api.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using CRM.Api.Areas.Identity.Data;
 
 namespace CRM.Api
 {
