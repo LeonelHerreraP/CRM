@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Nuevo perfil",
+    "Projects": [
+      {
+        "Path": "CRM.Api\\CRM.Api.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "CRM.WebBlazor\\CRM.WebBlazor.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
