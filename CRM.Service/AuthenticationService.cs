@@ -15,6 +15,7 @@ namespace CRM.Service
             var user = new ApplicationUser
             {
                 Email = model.Email,
+                UserName = model.Email,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 DateOfBirth = model.DateOfBirth,
