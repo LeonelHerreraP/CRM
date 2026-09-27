@@ -1,5 +1,7 @@
 
 using CRM.DataAccess;
+using CRM.Service;
+using CRM.Service.IService;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi;
 using System.Diagnostics;
@@ -24,6 +26,8 @@ namespace CRM.Api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CRM API", Version = "v1" });
             });
+
+            builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 
             var app = builder.Build();
 
