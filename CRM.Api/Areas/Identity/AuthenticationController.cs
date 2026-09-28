@@ -17,7 +17,7 @@ namespace CRM.Api.Areas.Identity
         public async Task<IActionResult> Login([FromBody] ApplicationUserInputModel model)
         {
             var result = await authenticationService.LoginAsync(model);
-            return Ok(result);
+            return result ? Ok(result) : StatusCode(500);
         }
 
         [HttpPost("register")]
@@ -25,7 +25,7 @@ namespace CRM.Api.Areas.Identity
         public async Task<IActionResult> Register([FromBody] ApplicationUserInputModel model)
         {
             var result = await authenticationService.RegisterAsync(model);
-            return Ok(result);
+            return result ? Ok(result) : StatusCode(500);
 
         }
 
@@ -34,7 +34,7 @@ namespace CRM.Api.Areas.Identity
         public async Task<IActionResult> ForgotPassword([FromBody] ApplicationUserInputModel model)
         {
             var result = await authenticationService.ForgotPasswordAsync(model);
-            return Ok(result);
+            return result ? Ok(result) : StatusCode(500);
         }
 
         [HttpPost("reset-password")]
@@ -42,7 +42,7 @@ namespace CRM.Api.Areas.Identity
         public async Task<IActionResult> ResetPassword([FromBody] ApplicationUserInputModel model)
         {
             var result = await authenticationService.ResetPasswordAsync(model);
-            return Ok(result);
+            return result ? Ok(result) : StatusCode(500);
         }
 
         [HttpPost("change-password")]
@@ -50,7 +50,7 @@ namespace CRM.Api.Areas.Identity
         public async Task<IActionResult> ChangePassword([FromBody] ApplicationUserInputModel model)
         {
             var result = await authenticationService.ChangePasswordAsync(model);
-            return Ok(result);
+            return result ? Ok(result) : StatusCode(500);
         }
 
         [HttpPost("refresh-token")]
@@ -58,7 +58,7 @@ namespace CRM.Api.Areas.Identity
         public async Task<IActionResult> RefreshToken([FromBody] ApplicationUserInputModel model)
         {
             var result = await authenticationService.RefreshTokenAsync(model);
-            return Ok(result);
+            return result ? Ok(result) : StatusCode(500);
         }
     }
 }
