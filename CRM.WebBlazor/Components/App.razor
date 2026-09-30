@@ -20,6 +20,19 @@
     <Routes @rendermode="InteractiveServer" />
     <script src="@Assets["_framework/blazor.web.js"]"></script>
     <script src="@Assets["_content/MudBlazor/MudBlazor.min.js"]"></script>
+    <script>
+            window.localStorageHelper = {
+                setItem: function (key, value) {
+                    localStorage.setItem(key, value);
+                },
+                getItem: function (key) {
+                    return localStorage.getItem(key);
+                },
+                removeItem: function (key) {
+                    localStorage.removeItem(key);
+                }
+            };
+    </script>
 </body>
 
 </html>
