@@ -14,7 +14,7 @@ namespace CRM.Api.Areas.Identity
 
         [HttpPost("login")]
         [DisplayName("Login")]
-        public async Task<IActionResult> Login([FromBody] ApplicationUserInputModel model)
+        public async Task<IActionResult> Login([FromBody] ApplicationUserLoginInputModel model)
         {
             var result = await authenticationService.LoginAsync(model);
             return result ? Ok(result) : StatusCode(500);
@@ -22,7 +22,7 @@ namespace CRM.Api.Areas.Identity
 
         [HttpPost("register")]
         [DisplayName("Register")]
-        public async Task<IActionResult> Register([FromBody] ApplicationUserInputModel model)
+        public async Task<IActionResult> Register([FromBody] ApplicationUserRegisterInputModel model)
         {
             var result = await authenticationService.RegisterAsync(model);
             return result ? Ok(result) : StatusCode(500);
@@ -31,7 +31,7 @@ namespace CRM.Api.Areas.Identity
 
         [HttpPost("forgot-password")]
         [DisplayName("Forgot Password")]
-        public async Task<IActionResult> ForgotPassword([FromBody] ApplicationUserInputModel model)
+        public async Task<IActionResult> ForgotPassword([FromBody] ApplicationUserRegisterInputModel model)
         {
             var result = await authenticationService.ForgotPasswordAsync(model);
             return result ? Ok(result) : StatusCode(500);
@@ -39,7 +39,7 @@ namespace CRM.Api.Areas.Identity
 
         [HttpPost("reset-password")]
         [DisplayName("Reset Password")]
-        public async Task<IActionResult> ResetPassword([FromBody] ApplicationUserInputModel model)
+        public async Task<IActionResult> ResetPassword([FromBody] ApplicationUserRegisterInputModel model)
         {
             var result = await authenticationService.ResetPasswordAsync(model);
             return result ? Ok(result) : StatusCode(500);
@@ -47,7 +47,7 @@ namespace CRM.Api.Areas.Identity
 
         [HttpPost("change-password")]
         [DisplayName("Change Password")]
-        public async Task<IActionResult> ChangePassword([FromBody] ApplicationUserInputModel model)
+        public async Task<IActionResult> ChangePassword([FromBody] ApplicationUserRegisterInputModel model)
         {
             var result = await authenticationService.ChangePasswordAsync(model);
             return result ? Ok(result) : StatusCode(500);
@@ -55,7 +55,7 @@ namespace CRM.Api.Areas.Identity
 
         [HttpPost("refresh-token")]
         [DisplayName("Refresh Token")]
-        public async Task<IActionResult> RefreshToken([FromBody] ApplicationUserInputModel model)
+        public async Task<IActionResult> RefreshToken([FromBody] ApplicationUserRegisterInputModel model)
         {
             var result = await authenticationService.RefreshTokenAsync(model);
             return result ? Ok(result) : StatusCode(500);
