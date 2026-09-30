@@ -17,7 +17,7 @@ namespace CRM.Api.Areas.Identity
         public async Task<IActionResult> Login([FromBody] ApplicationUserLoginInputModel model)
         {
             var result = await authenticationService.LoginAsync(model);
-            return result ? Ok(result) : StatusCode(500);
+            return result.IsSuccess ? Ok(result) : BadRequest(result);
         }
 
         [HttpPost("register")]
